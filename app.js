@@ -14,7 +14,7 @@ function calculateProfitAndLoss(initial, quantity, current){
        showMessage(`hey! The profite is ${profit} and the the profit percentage is ${profitPercentage} % 😀😀`);
 
        if(profitPercentage ){
-        return changeColor("rgb(22 163 74)");
+        return changeColor("#ec4899");
        }
        
     }
@@ -24,7 +24,7 @@ function calculateProfitAndLoss(initial, quantity, current){
         showMessage(`hey! The loss is ${loss} and the the loss percentage is ${lossPercentage} % 😔😔`); 
     
         if(lossPercentage ){
-             changeColor("rgb(248 113 113)");
+             changeColor("#f43f5e");
         }
 
     }

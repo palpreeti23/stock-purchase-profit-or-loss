@@ -5,17 +5,19 @@ body{
 
     text-align: center; 
     font-family: 'Bree Serif', serif;
-    height: 40rem;
-   
+    height: 35rem;
+    max-width: 40rem;
+   margin: auto;
 }
 
 .container{
 
-    border: .5rem solid #93c5fd;
+    border: .3rem solid #93c5fd;
     background-color: #64748b;
     height: 100%;
     margin: 3rem;
-    border-radius: .3rem;
+    border-radius: 1rem;
+    box-shadow: 7px 8px #cbd5e1;
     
 }
 
@@ -86,4 +88,16 @@ margin-top: .5rem;
     margin-top: 1rem;
     word-spacing: .3rem;
 
+}
+
+
+
+@media only screen and (width: 768px) {
+
+    html{
+
+        width: 75%;
+        
+    }
+    
 }
