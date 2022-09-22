@@ -6,34 +6,31 @@ const outputBox = document.querySelector("#output-box");
 
 const container = document.querySelector(".container");
 
+
+
+
 function calculateProfitAndLoss(initial, quantity, current){
 
-    if(initial < current){
-       var profit = (current-initial)*quantity;
-       var profitPercentage = ((profit/ initial)*100).toFixed(2);
-       showMessage(`hey! The profite is ${profit} and the the profit percentage is ${profitPercentage} % 😀😀`);
 
-       if(profitPercentage ){
-        return changeColor("#ec4899");
-       }
-       
-    }
-    else if(initial > current){
+     if(initial > current){
         var loss = (initial-current)*quantity;
-        var lossPercentage = ((loss/ initial)*100).toFixed(2);
-        showMessage(`hey! The loss is ${loss} and the the loss percentage is ${lossPercentage} % 😔😔`); 
-    
-        if(lossPercentage ){
-             changeColor("#f43f5e");
-        }
+        var lossPercentage = (loss/ initial)*100;
+        showMessage(`hey! The loss is ${loss} and the the loss percentage is ${lossPercentage.toFixed(2)} % 😔😔`); 
+        changeColor("#f43f5e");
+    }
+    else if(initial < current){
+
+        var profit = (current-initial)*quantity;
+        var profitPercentage = (profit/ initial)*100;
+        showMessage(`hey! The profite is ${profit} and the the profit percentage is ${profitPercentage.toFixed(2)} % 😀😀`);
+       changeColor("#ec4899");
 
     }
-    else{
+    else
+    {
         showMessage(`No pain no gain and no gain no pain!! 😐😐`)
-
-        if(profitPercentage === lossPercentage){
-             changeColor("#64748b");
-        }
+        changeColor("#64748b");
+        
     }
 
 }
@@ -51,9 +48,14 @@ function clickHandler(){
     var qyt =Number(quantityOfStocks.value);
     var curr =Number(currentPrice.value);
 
-    calculateProfitAndLoss(ip, qyt, curr);
-    
+    if((ip < 1 )||( qyt<1)){
 
+        outputBox.innerText = "invalid data";
+
+    }
+    else{
+        calculateProfitAndLoss(ip, qyt, curr);
+    }
 }
 
 checkBtn.addEventListener("click", clickHandler);
